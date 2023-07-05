@@ -1,0 +1,60 @@
+<h3 class="text-center">This is Data Binding Component</h3>
+<div>Name is: {{name}}</div>
+<div>Name is: <span [innerHTML]="name"></span></div>
+<div>Name is: <span bind-innerHTML="name"></span></div>
+=============================================================<br />
+<img src={{img_url}} alt="No Image Available" class="m-1">
+<img [src]="img_url" alt="No Image Available" class="m-1">
+<img bind-src="img_url" alt="No Image Available" class="m-1">
+======================================================
+<input value="Sachin" class="m-1" />
+<input value={{name}} class="m-1" />
+<input [value]=name class="m-1" />
+<input bind-value=name class="m-1" />
+===================================
+<button class="btn btn-primary m-1">button-1</button>
+<button class="btn btn-primary m-1" disabled={{flag}}>button-2</button>
+<button class="btn btn-primary m-1" disabled={{flag}}>button-2</button>
+<button class="btn btn-primary m-1" [disabled]=flag>button-3</button>
+<button class="btn btn-primary m-1" bind-disabled=flag>button-4</button>
+====================================
+<button class="btn btn-primary m-1" (click)="f1()">btn-1</button>
+<button class="btn btn-primary m-1" on-click="f1()">btn-2</button>
+<button class="btn btn-primary m-1" on-click="add()">btn-3</button>
+<button class="btn btn-primary m-1" (click)="addMore(2,5)">Add</button>
+=======================================
+<div></div>
+<select [(ngModel)]="seletedString">
+    <Option>kolkata</Option>
+    <Option>BLORE</Option>
+    <Option>MUMBAI</Option>
+    <Option>SHILLONG</Option>
+    </select>
+    <h2>Your state name is:{{seletedString}}</h2>
+   =========================
+   =============================
+   <div></div>
+   TextArea:
+   <textarea cols="30" rows="3" maxlength="100" [(ngModel)]='msg'></textarea>
+   <p>Remaining:{{100-msg.length}}</p>
+   =========================================
+   <input [type]=" flag?'text':'password'" placeholder="Enter your password"/>
+   <input type="checkbox" (change)="flag=!flag" class="m-1">show password
+   <div></div>
+   <h2 [hidden]="flag">Hellooooooo</h2>
+   <button (click)="flag=!flag">{{flag?'SHOW':'HIDE'}}</button>
+   =======================
+   <div></div>
+   <p>Num1: <input [(ngModel)]="number1"></p>
+    <p>Num2: <input [(ngModel)]="number2"></p>
+   <button on-click="ADD()">ADD</button>
+  <h2 [hidden]="addFlag"> The sum is: {{ number1*1 + number2*1 }}</h2> 
+   <button on-click="SUB()">SUBSTRUCT</button>
+   <h2 [hidden]="subFlag"> The sub is: {{ number1*1 - number2*1 }}</h2> 
+   <button on-click="MUL()">MUL</button>
+   <h2 [hidden]="mulFlag"> The mul is: {{ number1*1 * number2*1 }}</h2> 
+   <button on-click="DIV()">DIV</button>
+   <h2 [hidden]="divFlag"> The div is: {{ number1*1 / number2*1 }}</h2> 
+===================================
+<input #phone placeholder="phone number"/>
+<input ref-phone placeholder="phone number" />			

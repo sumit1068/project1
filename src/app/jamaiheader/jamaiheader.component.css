@@ -1,0 +1,13 @@
+.carousel-item{
+    max-width: 50%;  
+}
+div {  
+    width: auto;  
+    text-align: center;  
+    padding: 25px;  
+    background-color:yellowgreen;
+    }
+img {  
+    max-width: 50%;  
+    height: auto;  
+    }

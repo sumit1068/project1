@@ -1,0 +1,93 @@
+<p>directive works!</p>
+<h2 [ngStyle]="a%2==0?{'color':'blue'}:{'color':'red'}">
+    {{a}} is {{a%2==0?'even':'odd'}} number
+
+</h2>
+<h2 [ngStyle]="a%2==0?myBlue:myRed">
+    {{a}} is {{a%2==0?'even':'odd'}} number
+
+</h2>
+<h2 [ngClass]="a%2==0?'myBlue':'myRed'">
+    {{a}} is {{a%2==0?'even':'odd'}} number
+</h2>
+<button class="btn" [ngClass]="a % 2 === 0 ? 'btn-success' : 'btn-danger'">Click me</button>
+<input type="number" [(ngModel)]="change">
+<h2 [ngClass]="getClass()">{{change}}.Akarshita is  5 year old </h2>
+<div></div>
+<!--<ng-content></ng-content>
+<ng-content select="#div1"></ng-content>
+<ng-content select=".div2"></ng-content>--->
+<ng-content select="span"></ng-content>
+<div></div>
+<div></div>
+<h2 *ngIf="a%2===0">{{a}} is even number</h2>
+<h2 *ngIf="a%2!==0">{{a}} is odd number</h2>
+
+<div *ngIf="a%2===0 ;else odd">
+    {{a}} is even number
+</div>
+<ng-template #odd>
+    {{a}} is odd number
+</ng-template>
+
+<h2>{{daynumber}}</h2>
+
+<h4 [ngSwitch]="daynumber">
+    <p *ngSwitchCase="1">Monday</p>
+    <p *ngSwitchCase="2">Tuesday</p>
+    <p *ngSwitchCase="3">Wednesday</p>
+    <p *ngSwitchCase="4">Thursday</p>
+    <p *ngSwitchCase="5">Friday</p>
+    <p *ngSwitchCase="6">Satarday</p>
+    <p *ngSwitchCase="0">Sunday</p>
+    <p *ngSwitchDefault>Not a default number</p>
+</h4>
+
+<ol>
+<li *ngFor="let city of cities">
+{{city}}
+</li>
+</ol>
+
+
+<select name="" id="">
+    <option *ngFor="let city of cities">
+        {{city}}
+    </option>
+</select>
+
+      <div>
+        <table class="table table-bordered">
+                <thead>
+                    <th>SR NO:</th>
+                    <th>EMPID</th>
+                    <th>name</th>
+                    <th>SALARY</th>
+                    <th>is First</th>
+                    <th>is Last</th>
+                    <th>is EVEN</th>
+                    <th>is ODD</th>
+                </thead>
+               
+            <tbody><tr *ngFor="let emp  of employees,
+                let i=index;let is_first = first;
+                let is_last = last;let is_even = even;trackBy:trackByEmpId
+                let is_odd=odd">
+                <td>{{i+1}}</td>
+                <td>{{emp.eId}}</td>
+                <td>{{emp.name}}</td> 
+                <td>{{emp.sal}}</td> 
+                <td>{{emp.gender}}</td> 
+                <td>{{is_first}}</td> 
+                <td>{{is_last}}</td> 
+                <td>{{is_even}}</td> 
+                <td>{{is_odd}}</td> 
+            </tbody>
+            </table>
+        </div>
+        
+        <button class="btn btn-primary m-1" (click)="addEmployee()">ADDemployes</button> 
+       <div >
+        <input numberonly>
+       </div>
+       <button counting>click</button> 

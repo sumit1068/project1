@@ -1,0 +1,34 @@
+<div class="container mt-2" style="border:5px solid red">
+    <div class="row">
+        <div class="col">
+        <h3 class="text-center">This is Parent Component</h3>
+        <div>Myown data is {{a}}</div>
+        <button (click)="f1('parent parent')" class="btn btn-primary">Click-1</button>
+        <div>
+            <button (click)="f2('parent parent')" class="btn btn-primary">Click-2</button>
+        </div>
+         </div>
+         <div>My name from child is  {{myName}}</div>
+         <div>
+            Parent Component num: {{num}} <br>
+            <button (click)="increment()">Increment(+)</button> <br>
+         </div>
+         <div>
+            <input type="text" [(ngModel)]="newElement">
+            <button #myBtn (click)="addElement()">Add Element</button>
+          </div>
+          <div><input type="text" #myInputBox></div>
+          <ul>
+            <li *ngFor="let item of parentArray">{{ item }}</li>
+          </ul>
+    </div>
+    <div class="row">
+       <div class="col-sm-6"style="border:5px solid blue">
+        <app-child1 [aChild]="a" [childNum]='num' [f1]="f1" #child1 (eventObj)="receiveDataFromChild($event)" [employees]="employees"></app-child1> 
+       </div>
+       <div class="col-sm-6" style="border:5px solid green;">
+        <app-child2 [a]="a" [f2]="f2" [child1]="child1" [dataArray]="parentArray" (dataSaved)="handleData($event)"></app-child2>
+       </div>
+    </div>
+</div>
+

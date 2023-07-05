@@ -1,0 +1,54 @@
+<p>employee-list</p>
+<div class="col-sm-6">
+<table class="table table-bordered table-striped">
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.firstName}}</td>
+            <td>{{emp.lastName}}</td>
+            <td>{{emp.salary}}</td>
+
+        </tr>
+    </tbody>
+</table>
+
+</div>
+<div>
+    <div class="col-sm-4">
+        <h3 class="text-center">Add Employee</h3>
+        <div class="border p-3">
+            <p>
+                Emp Id: <input #empid />
+            </p>
+            <p>
+                First Name: <input #fname />
+            </p>
+            <p>
+                Last Name: <input #lname />
+            </p>
+          
+            <button class="btn btn-success" (click)="insertData(empid.value,fname.value,lname.value)">Add
+                Employee</button>
+                <input type="number" [(ngModel)]="employeeId" placeholder="Employee ID">
+                <button (click)="deleteEmployee()">Delete</button>
+                                
+        </div>
+</div>
+<div class="col-sm-6" *ngIf="flag">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr *ngFor="let resul of result">
+                <td>{{resul.postId}}</td>
+                <td>{{resul.id}}</td>
+                <td>{{resul.name}}</td>
+                <td>{{resul.email}}</td>
+                <td>{{resul.body}}</td>
+    
+            </tr>
+        </tbody>
+    </table>
+    </div>
+<div>
+    <button class="btn btn-success" (click)="getAllTodos()">AllTodos</button>
+   
+</div>

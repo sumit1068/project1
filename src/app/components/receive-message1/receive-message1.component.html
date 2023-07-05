@@ -1,0 +1,20 @@
+<p>receive-message1 works!</p>
+
+<li class="table table-bordered table-striped">
+    <tr *ngFor="let msg of messages">
+        <td [class.strikeout]="isStruckOut">{{msg.text}}</td>
+        <td><button class="btn btn-primary mx-2"  (click)="clearMessage()">Clear Messages</button></td>
+        <td>
+
+    <div>
+        <div  (click)="toggleStrikeOut()">Toggle Messages
+        
+        </div>
+      </div>
+
+
+
+        </td>
+    </tr>
+</li>
+

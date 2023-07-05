@@ -1,0 +1,34 @@
+<p>template-driven-from2 works!</p>
+
+<h3 class="text-center">template-driven-from1 works!</h3>
+<form #myForm="ngForm" (ngSubmit)="logForm(myForm.value)">
+   <p>
+    <input name="firstName" #fname="ngModel" [(ngModel)]='user.fname' required minlength="5" />
+    <span *ngIf="fname.hasError('required') && fname.dirty" class="text-danger">Plz fill firstname</span>
+   <span *ngIf="fname.hasError('minlength') && fname.dirty" class="text-danger">Minimum 5 chars required</span>
+</p>
+ <p>
+    <input name="Lastname" #lname="ngModel" [(ngModel)]='user.lname' required minlength="5" />
+    <span *ngIf="lname.hasError('required') && lname.dirty" class="text-danger">Plz fill lastname</span>
+   <span *ngIf="fname.hasError('minlength') && lname.dirty" class="text-danger">Minimum 5 chars required</span>
+</p>
+<p></p>   
+    <div ngModelGroup='address'>
+        <p></p>  
+        <label>Street:</label>
+        <input type="text" name="street" ngModel>
+        <p></p>  
+        <label>pin:</label>
+        <input type="text" name="zip" ngModel>
+        <p></p>  
+        <label>City:</label>
+        <input type="text" name="city" ngModel>
+    </div>
+     
+    <button type="submit">Submit</button>
+    <button type="reset">clear</button>
+    <button type="button"(click)="resetForm(myForm)">RESET</button>
+  </form>
+  <h2> {{ myForm.value | json }} </h2>
+  
+

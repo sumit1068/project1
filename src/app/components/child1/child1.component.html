@@ -1,0 +1,39 @@
+<p>child1 works!</p>
+<div>A value from Parent is {{aChild}}</div>
+<button (click)="f1('child child')" class="btn-primary">f1</button>
+<div>The name is in child1 component :{{name}}</div>
+<button (click)="sendDataToParent()">Send Data To Parent</button>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+<table class="table table-striped table bordered">
+    <thead>
+        <tr>
+            <th>Empid</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let emp of employees; let i = index">
+            <td>{{emp.eId}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.gender}}</td>
+            <td>
+              </td>
+        
+        </tr>
+      
+    </tbody>
+
+</table>
+</div>
+<div>
+    <p>
+        This is child component <br>
+        child component Num: {{childNum}}
+   </p>
+      
+</div>

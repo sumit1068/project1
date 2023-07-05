@@ -1,0 +1,35 @@
+<p>child2 works!</p>
+
+<div>A value from Parent is {{a}}</div>
+<button (click)="f2('child child')" class="btn-primary">f2</button>
+<div>
+    The sibling data shared  in child2 is {{child1.name}}
+</div>
+<div class="col-sm-4">
+    <h3 class="text-center">Add Employee</h3>
+    <div class="border p-3">
+        <p>
+            Emp Id: <input #empid />
+        </p>
+        <p>
+            Name: <input #name />
+        </p>
+        <p>
+            Salary: <input #sal />
+        </p>
+        <p>
+            gender: <input #gender />
+        </p>
+        <button class="btn btn-success" (click)="addEmp(empid.value,name.value,sal.value,gender.value)">Add
+            Employee</button>
+          
+    </div>
+
+    <div>
+        <ul>
+            <li *ngFor="let item of dataArray">{{ item }}</li>
+          </ul>
+      
+    </div>
+  </div>
+  

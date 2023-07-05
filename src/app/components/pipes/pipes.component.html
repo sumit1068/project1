@@ -1,0 +1,98 @@
+<p>pipes works!</p>
+<h4>{{name}}</h4>
+<h4>{{name| uppercase}}</h4>
+<h4>{{name| lowercase}}</h4>
+<h4>{{name| titlecase}}</h4>
+<br/>
+=========================
+<br/>
+<h4>{{mySal}}</h4>
+<h4>{{mySal| currency}}</h4>
+<h4>{{mySal| currency:'INR'}}</h4>
+<h4>{{mySal| currency: '&euro'}}</h4>
+<h4>{{mySal| currency:'&#165;'}}</h4>
+=========================
+<br/>
+<h4>{{today}}</h4>
+<h4>{{today| date}}</h4>
+<h4>{{today| date:'fulldate'}}</h4>
+<h4>{{today| date: 'mediumdate'}}</h4>
+<h4>{{today| date:'fullTime'}}</h4>
+
+<h4>{{today| date: 'mediumTime'}}</h4>
+<h4>{{today| date:'shortTime'}}</h4>
+<h4>{{today| date: 'dd-mm-yyyy'}}</h4>
+<h4>{{today| date:'dd:mm:yyyy'}}</h4>
+<h4>{{today| date:'dd:mm/yyyy'}}</h4>
+<h4>{{today| date:'yyyy/mmmm/dd'}}</h4>
+
+<h4>{{today| date:"fullTime":"UTC"}}</h4>
+<h4>{{today| date:'fullTime':"IST"}}</h4>
+<br/>
+=======================
+<br/>
+<h4>{{12.1112222333| number:"3.2-5"}}</h4>
+<h4>{{12.1| number:"3.2-5"}}</h4>
+<h4>{{12.1112236| number:"3.2-5"}}</h4>
+<h4>{{0.25| percent}}</h4>
+<br/>
+======================
+<h4>{{user|json}}</h4>
+<br/>
+===========
+<br/>
+<h3 *ngFor="let entry of user|keyvalue">
+    {{entry.key}}----{{entry.value}}
+</h3>
+===========
+<br/>
+<h3>{{arr}}</h3>
+<h3>{{arr| slice : 2}}</h3>
+<h3>{{arr| slice : 2:4}}</h3>
+<h3>{{arr| slice : 2:-2}}</h3>
+
+==================
+<br/>
+<textarea cols="30" rows="4" maxlength="100" [(ngModel)]="msg"></textarea>
+<h4>Remaining charecters:{{msg | remaining2}}</h4>
+
+=========
+<ul>
+    <li *ngFor="let name of employees | titlepipe">{{ name }}</li>
+  </ul>
+  ==========
+<p>1st: {{ 1 | ordinalPipe }}</p>
+<p>2nd: {{ 2 | ordinalPipe }}</p>
+<p>3rd: {{ 3 | ordinalPipe }}</p>
+<p>4th: {{ 4 | ordinalPipe }}</p>
+<!-- and so on... -->
+
+<input type="text" [(ngModel)]="searchText" placeholder="Search employees">
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees2 | employeeFilter: searchText">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.position }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  Array item in original order
+  <span *ngFor="let item of arr">{{item}},&nbsp;</span>
+  <div>
+  
+    <div>
+      Array item in original order
+      <span *ngFor="let item of arr|sortFilter">{{item}},&nbsp;</span>
+      <div>
+<input type="number" #newNum/>
+<button (click)="arr.push(+newNum.value)">Adda new number</button>

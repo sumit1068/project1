@@ -1,0 +1,49 @@
+<p>employee-list</p>
+<div class="col-sm-6">
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>emp Id</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>full name</th>
+            <th>email</th>
+       
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.first_name}}</td>
+            <td>{{emp.last_name}}</td>
+            <td>{{emp.first_name}} {{emp.last_name}} </td>
+            <td>{{emp.email}}</td>
+         
+            <td>
+            <td><button class="btn btn-danger" (click)="deleteEmp(emp.id)">DEL</button></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+<div class="col-sm-4">
+    <h3 class="text-center">Add Employee</h3>
+    <div class="border p-3">
+        <p>
+            Id: <input #id />
+        </p>
+        <p>
+            First_Name: <input #fname />
+        </p>
+        <p>
+            Last_Name: <input #lname />
+        </p>
+        <p>
+            Email: <input #email />
+        </p>
+        <button class="btn btn-success" (click)="addEmp(id.value,fname.value,fname.value,email.value)">Add
+            Employee</button>
+          
+    </div>
+  </div>
+  

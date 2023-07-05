@@ -1,0 +1,29 @@
+<h3 class="text-center">template-driven-from1 works!</h3>
+<form #myForm="ngForm" (ngSubmit)="logForm(myForm.value)">
+   <p>
+    <label>Firstname:</label>
+    <input type="text" name="firstname" ngModel>
+</p>
+<p>
+    <label>Lastname:</label>
+    <input type="text" name="lastname" ngModel>
+</p>
+<p></p>   
+    <div ngModelGroup='address'>
+        <p></p>  
+        <label>Street:</label>
+        <input type="text" name="street" ngModel>
+        <p></p>  
+        <label>pin:</label>
+        <input type="text" name="zip" ngModel>
+        <p></p>  
+        <label>City:</label>
+        <input type="text" name="city" ngModel>
+    </div>
+     
+    <button type="submit">Submit</button>
+    <button type="reset">clear</button>
+    <button type="button"(click)="resetForm(myForm)">RESET</button>
+  </form>
+  <h2> {{ myForm.value | json }} </h2>
+  
